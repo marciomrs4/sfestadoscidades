@@ -1,0 +1,30 @@
+estados:
+    path:     /
+    defaults: { _controller: "MrsBlogBundle:Estados:index" }
+
+estados_show:
+    path:     /{id}/show
+    defaults: { _controller: "MrsBlogBundle:Estados:show" }
+
+estados_new:
+    path:     /new
+    defaults: { _controller: "MrsBlogBundle:Estados:new" }
+
+estados_create:
+    path:     /create
+    defaults: { _controller: "MrsBlogBundle:Estados:create" }
+    methods:  POST
+
+estados_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MrsBlogBundle:Estados:edit" }
+
+estados_update:
+    path:     /{id}/update
+    defaults: { _controller: "MrsBlogBundle:Estados:update" }
+    methods:  [POST, PUT]
+
+estados_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MrsBlogBundle:Estados:delete" }
+    methods:  [POST, DELETE]

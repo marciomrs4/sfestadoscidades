@@ -1,0 +1,22 @@
+mrs_blog_estados:
+    resource: "@MrsBlogBundle/Resources/config/routing/estados.yml"
+    prefix:   /estados
+mrs_blog_cidades:
+    resource: "@MrsBlogBundle/Resources/config/routing/cidades.yml"
+    prefix:   /cidades 
+
+mrs_blog_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MrsBlogBundle:Default:index }
+mrs_blog_json:
+    path:     /json
+    defaults: { _controller: MrsBlogBundle:Default:json }
+    requirements:
+           _method: GET
+mrs_cidades_json:
+    path:     /jsoncidades
+    defaults: { _controller: MrsBlogBundle:Default:jsonCidades }
+mrs_cidades_serializer:
+    path:     /serializercidades
+    defaults: { _controller: MrsBlogBundle:Default:serializerCidades }
+    

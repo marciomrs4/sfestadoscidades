@@ -1,0 +1,12 @@
+{{ dump(cidades) }}
+
+{# {{ cidades | serialize('json') }}#}
+
+{% for cidade in cidades %}
+<ul>
+	<li>{{ cidade.nome }}</li>
+	<li>{{ cidade.prefeito }}</li>
+	<li>{{ cidade.getEstadosId }}</li>
+	<li>{{ cidade.getEstadosId.numerohabitantes }}</li>
+</ul>
+{% endfor %}

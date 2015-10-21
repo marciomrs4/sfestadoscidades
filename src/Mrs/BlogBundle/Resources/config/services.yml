@@ -1,0 +1,6 @@
+services:
+#    mrs_blog.example:
+#        class: Mrs\BlogBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+    meu_servico:
+        class: Servico\Box\Caixa

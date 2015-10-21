@@ -1,0 +1,30 @@
+cidades:
+    path:     /
+    defaults: { _controller: "MrsBlogBundle:Cidades:index" }
+
+cidades_show:
+    path:     /{id}/show
+    defaults: { _controller: "MrsBlogBundle:Cidades:show" }
+
+cidades_new:
+    path:     /new
+    defaults: { _controller: "MrsBlogBundle:Cidades:new" }
+
+cidades_create:
+    path:     /create
+    defaults: { _controller: "MrsBlogBundle:Cidades:create" }
+    methods:  POST
+
+cidades_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MrsBlogBundle:Cidades:edit" }
+
+cidades_update:
+    path:     /{id}/update
+    defaults: { _controller: "MrsBlogBundle:Cidades:update" }
+    methods:  [POST, PUT]
+
+cidades_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MrsBlogBundle:Cidades:delete" }
+    methods:  [POST, DELETE]

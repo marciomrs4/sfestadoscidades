@@ -1,0 +1,6 @@
+com.dubture.symfony.coreconsole=
+com.dubture.symfony.coredumped_container=app/cache/dev/appDevDebugProjectContainer.xml
+com.dubture.symfony.corephp_executable=/usr/bin/php5
+com.dubture.symfony.coreuse_project_phar=false
+eclipse.preferences.version=1
+synthetic_services=[{"name"\:"request","class"\:"Symfony\\\\Component\\\\HttpFoundation\\\\Request"}]
