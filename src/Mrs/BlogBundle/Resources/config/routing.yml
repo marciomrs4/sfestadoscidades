@@ -19,4 +19,6 @@ mrs_cidades_json:
 mrs_cidades_serializer:
     path:     /serializercidades
     defaults: { _controller: MrsBlogBundle:Default:serializerCidades }
-    
+mrs_user:
+    resource: "@MrsBlogBundle/Controller"
+
