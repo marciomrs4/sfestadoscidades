@@ -8,6 +8,8 @@
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        <script src="{{ asset('bundles/mrsblog/js/jquery-2.2.4.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

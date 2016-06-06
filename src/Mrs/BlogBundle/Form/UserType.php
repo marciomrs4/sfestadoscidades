@@ -4,9 +4,11 @@ namespace Mrs\BlogBundle\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Mrs\BlogBundle\Form\Listener;
 
 class UserType extends AbstractType
 {
@@ -19,12 +21,27 @@ class UserType extends AbstractType
         $builder
             ->add('name')
             ->add('idade')
+            ->add('estado', EntityType::class, array(
+                'class' => 'Mrs\BlogBundle\Entity\Estados',
+                'placeholder' => 'Selecione o Estado'))
             ->add('cidade',EntityType::class,
-                array('class' => 'Mrs\BlogBundle\Entity\Cidades'))
-            ->add('estado', EntityType::class,
+                array('class' => 'Mrs\BlogBundle\Entity\Cidades')
+            );
+
+        /*
+         * ->add('estado', EntityType::class,
                 array('class' => 'Mrs\BlogBundle\Entity\Estados'))
-        ;
+
+         * */
+        $builder->addEventSubscriber(new Listener\AddStateFieldSubscriber());
+
+
+
+
     }
+
+
+
     
     /**
      * @param OptionsResolverInterface $resolver

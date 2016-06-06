@@ -12,4 +12,52 @@
         </a>
     </li>
 </ul>
+
+    <div id="loader">
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+<script>
+
+    //alert('Toy');
+
+    var $estados = $('#mrs_blogbundle_user_estado');
+    // When sport gets selected ...
+    $estados.change(function() {
+
+        var $form = $(this).closest('form');
+
+       // alert('Change: ' + $form.attr('action') + $form.attr('method'));
+        // ... retrieve the corresponding form.
+
+        // Simulate form data, but only include the selected sport value.
+        var data = {};
+        data = $estados.serialize();
+        // Submit data via AJAX to the form's action path.
+        $.ajax({
+            url : $form.attr('action'),
+            type: $form.attr('method'),
+            data : data,
+            success: function(html) {
+                // Replace current position field ...
+                $('#mrs_blogbundle_user_cidade').replaceWith(
+                        // ... with the returned one from the AJAX response.
+                        $(html).find('#mrs_blogbundle_user_cidade')
+                );
+                // Position field now displays the appropriate positions.
+            },
+            error: function(err){
+                $("#loader").html(err);
+            }
+        });
+    });
+
+
+</script>
+
 {% endblock %}
